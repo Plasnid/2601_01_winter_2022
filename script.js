@@ -33,6 +33,52 @@ let myInteger = 26;
 Math.random();  // * gives us a number between 0 and 1
 console.log(Math.random());
 
+// * arrays
+let ourCollections = ["Seashells", "Necklaces", "Art Toys", "Stones", "Shoes", "Hats", "Stickers", "Movies", "art supplies", "games"];
+
+ourCollections.push("books")
+
+function printArray(arr){
+    console.log(arr.length);
+    let myList = document.createElement("ul");
+    //* a for loop
+    for(let i=0; i<arr.length;i++){
+        let myItem = document.createElement("li");
+        myList.appendChild(myItem);
+        myItem.innerText = arr[i];
+        console.log(arr[i]);
+    }
+    let pageBody = document.querySelector("body");
+    pageBody.appendChild(myList);
+}
+printArray(ourCollections);
+
+//* object
+let laptop = {
+    manufacturer: "asus",
+    hdSizeInTb: 1,
+    ramInGb: 16,
+    software: ["adobe XD", "microsoft word", "illustrator", "photoshop", "GTFI"],
+    madeOfJello: false,
+    runGame: function(gameType){
+        console.log(`I will now run ${gameType}`);
+        if(gameType=="GTFI"){
+            console.log("Damn, thats a good game!");
+        }
+    }
+}
+/**
+ * * = is different from ==
+ * * = sets a value
+ * * == compares values
+ * * === compares value and datatype
+ */
+console.log(laptop["manufacturer"]);
+console.log(laptop.software[1]);
+laptop.runGame("Pong");
+
+
+
 
 
 
